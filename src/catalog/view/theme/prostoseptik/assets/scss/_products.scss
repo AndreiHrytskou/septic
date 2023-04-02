@@ -1,0 +1,439 @@
+.product-headbaner{
+	.swiper-container {
+		overflow: hidden;
+  		width: 100%;
+  		@media (min-width: 480px) {
+    		min-height: 398px;
+  		}
+  	&-wrapper {
+		width: 49%;
+   	display: flex;
+   	flex-flow: column nowrap;
+   	@media (min-width: 480px) {
+      	flex-flow: row nowrap;
+		}
+		gap: 20px;
+   	height: auto;
+  	}
+	.swiper-slide{
+		img{
+			border-radius: 10px;
+		border: 1px solid $news;
+		}
+	}
+}
+.swiper-container-wrapper .swiper{
+				margin-top: 0;
+			}
+.swiper-slide {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  /* Slide content */
+
+  &-active {
+    .description,
+    .title {
+      opacity: 1;
+    }
+    .title {
+      margin-bottom: 0.5rem;
+      font-size: 24px;
+      color: #000;
+      transition: opacity 0.5s ease 0.5s;
+    }
+    .description {
+      font-size: 16px;
+      color: #777;
+      transition: opacity 0.5s ease 0.75s;
+    }
+  }
+}
+.product-headbaner .swiper-button-next,
+.product-headbaner .swiper-button-prev {
+	display: none;
+    color: $paginat;
+}
+.gallery-top {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @media (min-width: 480px) {
+    width: 80%;
+    height: 398px;
+  }
+}
+
+.gallery-thumbs {
+  width: 100%;
+  max-width: 128px;
+  padding-top: 10px;
+  @media (min-width: 480px) {
+    width: 100%;
+    padding: 0;
+  }
+  .swiper-wrapper {
+    flex-direction: row;
+    @media (min-width: 480px) {
+		 flex-direction: column;
+		 gap: 10px;
+		 max-width: 128px;
+		}
+	}
+	.swiper-slide {
+		max-height: 122px;
+		width: 25%;
+    flex-flow: row nowrap;
+    @media (min-width: 480px) {
+      flex-flow: column nowrap;
+      width: 100%;
+		max-width: 128px;
+		border-radius: 10px;
+		border: 1px solid $news;
+    }
+    height: 33%;
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+}
+.swiper-backface-hidden .swiper-slide{
+	height: 398px;
+}
+}
+.product-title{
+	@include fonts($comfortaa, 35px, 700, 38.5px, $dark_gray);
+	margin-bottom: 5px;
+}
+.product-headbaner	.swiper-pagination{
+	display: none;
+}
+.product-headbaner{
+	.gallery-top{
+		.swiper-slide img{
+		object-fit:cover;
+		object-position: center;
+		max-width: 450px;
+		height: 398px;
+		}
+	}
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+	margin-top: 20px;
+	.product-descriptions{
+		background-color: $block;
+		padding: 30px;
+		border-radius: 10px;
+		width: 49%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		gap: 25px;
+		&-top{
+			.checbox_product{
+				max-width: 250px;
+				background-color: rgba(240, 247, 255, 1);
+				padding: 10px;
+				border-radius: 10px;
+				margin-bottom: 15px;
+			}
+			.price{
+				@include fonts($roboto, 25px, 400, 32px, $dark_gray);
+			}
+			&-btn{
+				&-item{
+					margin-top: 30px;
+					cursor: pointer;
+					border: none;
+					width: 100%;
+					max-width: 146px;
+					background-color: $dark_blue;
+					border-radius: 5px;
+					padding: 20px 40px;
+					@include fonts($roboto, 16px, 700, 16px, $white);
+					text-align: center;
+					letter-spacing: 0.03em;
+					text-transform: uppercase;
+				}
+			}
+		}
+		&-bottom{
+			background-color: $white;
+			border-radius: 10px;
+			padding: 20px 30px;
+			max-width: 350px;
+			display: flex;
+			flex-direction: column;
+			gap: 7px;
+			&-text{
+				@include fonts($roboto, 25px, 400, 37.5px, $dark_gray);
+			}
+			&-descr{
+				@include fonts($roboto, 16px, 400, 20.8px, $dark_gray);
+				.blue{
+					color: $dark_blue;
+				}
+			}
+			&-number{
+				text-decoration: underline;
+				@include fonts($roboto, 16px, 700, 16px, $dark_blue);
+				letter-spacing: 0.03em;
+				text-decoration-line: underline;
+				text-transform: uppercase;
+
+			}
+		}
+	}
+}
+// characteristic
+.checbox_product{
+	.price-wrap{
+		padding-left: 0;
+	}
+}
+.characteristic{
+	margin-top: 30px;
+	border-radius: 10px;
+	padding: 30px;
+	&-wrap{
+		margin-top: 20px;
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		&-list{
+			width: 100%;
+			max-width: 49%;
+			display: flex;
+			flex-direction: column;
+			gap: 3px;
+			&-item{
+				background-color: $white;
+				padding: 10px 20px;
+				border-radius: 5px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				&-left{
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					img{
+						width: 16px;
+						height: 16px;
+					}
+					p{
+						@include fonts($roboto, 16px, 400, 16px, $dark_blue);
+						letter-spacing: 0.03em;
+					}
+				}
+				&-right{
+					p{
+						@include fonts($roboto, 16px, 700, 16px, $dark_blue);
+						text-align: right;
+						letter-spacing: 0.03em;
+					}
+				}
+			}
+		}
+	}
+}
+
+// textblock
+
+.textblock{
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 30px 50px;
+	.title{
+		margin-bottom: 10px;
+	}
+	&-text{
+		@include fonts($roboto, 16px, 400, 24px, $dark_gray);
+		margin-top: 10px;
+		margin-bottom: 10px;
+		}
+	&-text:last-child{
+		margin-bottom: 0;
+	}
+	&-list{
+			margin-block-start: 0;
+			padding-inline-start: 30px;
+			margin-bottom: 0px;
+			&-item{
+				@include fonts($roboto, 16px, 400, 24px, $dark_gray);
+				margin-bottom: 10px;
+			}
+			&-item:last-child{
+				margin-bottom: 0;
+			}
+			li{
+				margin-bottom: 10px;
+			}
+			li:last-child{
+				margin-bottom: 0;
+			}
+		}
+	
+}
+
+// form
+
+.form{
+	margin: 80px 0;
+	background-color: $light_blue;
+	border-radius: 10px;
+	padding: 50px 0 50px 50px;
+	display: flex;
+	justify-content: space-between;
+	&-left{
+		max-width: 477px;
+		display: flex;
+		flex-direction: column;
+		&-title{
+			@include fonts($comfortaa, 45px, 700, 50px, $white);
+			margin-bottom: 10px;
+		}
+		&-subtitle{
+			@include fonts($roboto, 25px, 400, 38px, $white);
+			margin-bottom: 20px;
+		}
+		&-form{
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			max-width: 400px;
+			width: 100%;
+			#name{
+				border-radius: 5px;
+				padding: 14px 20px;
+				border: none;
+				outline: none;
+			}
+			#phone{
+				border-radius: 5px;
+				padding: 14px 20px;
+				border: none;
+				outline: none;
+			}
+			input::placeholder{
+				@include fonts($roboto, 16px, 400, 21px, $inputplaceholder);
+			}
+			.form-btn{
+				cursor: pointer;
+				background-color: $paginat;
+				border-radius: 5px;
+				padding: 20px 40px;
+				border: none;
+				@include fonts($roboto, 16px, 700, 16px, $white);
+				text-align: center;
+				letter-spacing: 0.03em;
+				text-transform: uppercase;
+			}
+		}
+	}
+	&-right{
+		max-width: 624px;
+		width: 100%;
+	}
+}
+.modal__product{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	.title{
+		max-width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.modal__img{
+		width: 36px;
+		height: 36px;
+	}
+	.btn{
+		max-width: 400px;
+		width: 100%;
+		padding: 20px 30px;
+	}
+	.toCatalog{
+		max-width: 400px;
+		width: 100%;
+		text-decoration: none;
+		border: 2px solid $paginat;
+		border-radius: 5px;
+		padding: 20px 15px;
+		@include fonts($roboto, 16px, 700, 16px, $paginat);
+		text-align: center;
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+	}
+	.remove{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-family: $comfortaa;
+	}
+}
+.need{
+	margin-top: 20px;
+	position: relative;
+	display: flex;
+	padding: 30px;
+	border-radius: 10px;
+	background-color: $white;
+	align-items: center;
+	justify-content: center;
+	&_wrap{
+		max-width: 251px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__text{
+		@include fonts($roboto, 18px, 400, 27px, $dark_gray);
+		&-descriptions{
+			@include fonts($roboto, 14px, 400, 18px, $dark_gray);
+		}
+	}
+	&__number{
+		@include fonts($roboto, 16px, 700, 16px, $dark_blue);
+		letter-spacing: 0.03em;
+		text-transform: uppercase;
+	}
+	&__img{
+		position: absolute;
+		bottom: 0;
+	}
+	.left{
+		left: 40px;
+	}
+	.right{
+		right: 40px;
+	}
+}
+
+.section-text{
+	h2,h3,h4{
+		margin: 20px 0;
+	}
+
+	p{
+		margin: 0 0 16px;
+	}
+
+	ol, ul{
+		margin: 0 0 16px 20px;
+	}
+}

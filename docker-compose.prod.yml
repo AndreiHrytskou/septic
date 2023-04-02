@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+
+    php:
+        build:
+            context: ./
+            args:
+                - ver=${VER}
+                - network=${NETWORK}
+                - domain=${DOMAIN}
+                - domain_file=${DOMAIN_FILE}
+                - email=${EMAIL}
+                - container_prefix=${CONTAINER_PREFIX}
+                - num=${NUM}
+                - apache_port=${APACHE_PORT}
+            dockerfile: _docker/${VER}/app/Dockerfile
+        restart: always
+        privileged: true
+        volumes:
+            - /ssl/letsencrypt/:/etc/letsencrypt/${DOMAIN}
+            - /mnt/s3/image/:/var/www/s3/image/
+            - ./src:/var/www/html
+            - ./_docker/${VER}/apache/log/:/var/log/apache2/
+            - ./_docker/${VER}/apache/apache2.conf:/etc/apache2/apache2.conf
+            - ./_docker/${VER}/app/conf.d:/usr/local/etc/php/conf.d
+        container_name: ${CONTAINER_PREFIX}_php
+        networks:
+            net:
+                ipv4_address: ${NETWORK}.${NUM}
+
+    cerbot:
+        image: certbot/certbot
+        container_name: ${CONTAINER_PREFIX}_certbot
+        volumes:
+            - /ssl/letsencrypt/${DOMAIN}:/etc/letsencrypt
+            - ./src:/var/www/html
+        command: certonly --webroot --webroot-path=/var/www/html --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN}
+        depends_on:
+            - php
+
+    smtp:
+        image: namshi/smtp
+        environment:
+            - SMARTHOST_ADDRESS=${SMTP_ADDRESS}
+            - SMARTHOST_PORT=${SMTP_PORT}
+            - SMARTHOST_USER=${SMTP_USER}
+            - SMARTHOST_PASSWORD=${SMTP_PASSWORD}
+            - SMARTHOST_ALIASES=${SMTP_ALIASES}
+
+networks:
+    net:
+        name: ${NETWORK_NAME}
+        external: true
+
+    back:
+        driver: bridge

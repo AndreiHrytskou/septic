@@ -1,0 +1,53 @@
+/tmp
+/.idea
+/src/.idea
+/src/system/storage/cache
+/src/config.php
+/src/admin/config.php
+docker-compose.yml
+
+/src/image/cache
+
+/_docker/dev/apache/log
+/_docker/prod/apache/log
+/_docker/dev/mysql/log
+
+# Image Cache Files
+/src/image/cache/*
+!/src/image/cache/index.html
+
+# Backup Files
+/src/system/storage/backup/*
+!/src/system/storage/backup/index.html
+
+# System Cache Files
+/src/system/storage/cache/*
+!/src/system/storage/cache/index.html
+
+# Download Files
+/src/system/storage/download/*
+!/src/system/storage/download/index.html
+
+# Log Files
+/src/system/storage/logs/*
+!/src/system/storage/logs/index.html
+
+# Marketplace Files
+/src/system/storage/marketplace/*
+!/src/system/storage/marketplace/index.html
+
+# Session Files
+/src/system/storage/session/*
+!/src/system/storage/session/index.html
+
+# Upload Files
+/src/system/storage/upload/*
+!/src/system/storage/upload/index.html
+
+# Session Files
+/src/system/storage/session/*
+!/src/system/storage/session/index.html
+
+# Session Files
+/src/system/storage/modification/*
+!/src/system/storage/modification/index.html

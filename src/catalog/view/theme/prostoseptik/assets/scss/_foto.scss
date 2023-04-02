@@ -1,0 +1,106 @@
+.foto{
+	&-title{
+		@include fonts($comfortaa, 50px, 700, 55px, $dark_gray);
+		margin-top: 20px;
+	}
+	&-check{
+		display: flex;
+		margin-top: 30px;
+		position: relative;
+		&-list{
+			list-style: none;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			&-item{
+				cursor: pointer;
+				background-color: $block;
+				padding: 10px;
+				border-radius: 5px;
+				@include fonts($roboto, 14px, 400, 18px, $dark_gray);
+				img{
+					display: none;
+				}
+			}
+		}
+	}
+	&-galery{
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		&-wrap{
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			background-color: $block;
+			border-radius: 10px;
+			padding: 50px;
+		}
+		&-wrap:nth-child(even){
+			flex-direction: row-reverse;
+		}
+		&-descr{
+			max-width: 38%;
+			&-subtitle{
+				@include fonts($roboto, 20px, 700, 26px, $dark_gray);
+			}
+			&-text{
+				@include fonts($roboto, 16px, 400, 24px, $dark_gray);
+			}
+		}
+		&-block{
+			width: 100%;
+			display: flex;
+			gap: 10px;
+		}
+	}
+}
+.foto-filtr{
+	display: none;
+}
+.item_active{
+	background-color: $paginat;
+	color:$white;
+}
+
+.slide, .slide2, .slide3, .slide4{
+	max-width: 440px;
+	width: 100%;
+	height: 348px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.8);
+	flex: 1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	transition: all 500ms ease-in-out;
+}
+.slide.active{
+ 	flex: 10;
+}
+.slide2.active{
+ 	flex: 10;
+}
+.slide3.active{
+ 	flex: 10;
+}
+.slide4.active{
+ 	flex: 10;
+}
+.foto-more{
+	text-align: center;
+	margin: 70px auto 100px;
+		&-btn{
+			background-color: $paginat;
+			border-radius: 5px;
+			padding: 20px 40px;
+			@include fonts($roboto, 16px, 700, 16px, $white);
+			text-decoration: none;
+			text-align: center;
+			letter-spacing: 0.03em;
+			text-transform: uppercase;
+		}
+}

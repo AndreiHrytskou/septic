@@ -1,0 +1,156 @@
+.cart{
+	.cart-title{
+		margin-top: 30px;
+	}
+	&-wrap{
+		margin-top: 30px;
+		margin-bottom: 80px;
+		background-color: $block;
+		padding: 50px 70px;
+		border-radius: 10px;
+		&-subtitle{
+			@include fonts($comfortaa, 30px, 700, 33px, $dark_gray);
+			text-align: center;
+		}
+		&-table{
+			width: 100%;
+			margin-top: 30px;
+		}
+		&-block{
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			margin-bottom: 20px;
+			width: 100%;
+			background-color: $white;
+			border-radius: 10px;
+			border: 1px solid $news;
+			.product-thumbnail{
+				max-width: 120px;
+				&-img{
+					width: 120px;
+					display: block;
+					height: 90px;
+					object-fit: cover;
+					object-position: center;
+					border: 1px solid $news;
+					border-radius: 5px;
+				}
+			}
+			&-name{
+				.product-name{
+					max-width: 300px;
+					display: block;
+					margin-bottom: 10px;
+					a{
+						@include fonts($roboto, 20px, 700, 26px, $dark_gray);
+						text-decoration: none;
+					}
+				}
+				.product-price{
+					@include fonts($roboto, 18px, 400, 23px, $dark_gray);
+				}
+			}
+		}
+	
+	}
+
+	.bottom-block,.buttons-block{
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.proceed{
+	text-decoration: none;
+	background-color: $paginat;
+	border-radius: 5px;
+	padding: 20px 40px;
+	@include fonts($roboto, 16px, 700, 16px, $white);
+	text-align: center;
+	letter-spacing: 0.03em;	
+	text-transform: uppercase;
+}
+
+}
+.bottom-block{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.coupon{
+		#coupon_code{
+			border: none;
+			padding: 14.5px 10px;
+			border-radius: 5px;
+		}
+		.button{
+			cursor: pointer;
+			margin-left: 10px;
+			border: 1px solid $paginat;
+			padding: 12px 10px;
+			background-color: transparent;
+			border-radius: 5px;
+			@include fonts($roboto, 14px, 400, 18px, $paginat);
+		}
+	}
+	.shop_table{
+		@include fonts($roboto, 20px, 400, 26px, $dark_gray);
+	}
+}
+	.product-quantity{
+			display: flex;
+			align-items: center;
+			.quantity{
+					max-width: 50px;
+					height: 41px;
+					padding: 10px 0px;
+					text-align: center;
+					position: relative;
+					border: 1px solid $news;
+					@include fonts($roboto, 16px, 400, 21px, $dark_gray);
+				}
+			
+				input::-webkit-outer-spin-button,
+				input::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0; 
+				}
+			.minus,
+			.plus{
+				padding: 9px 20px;
+				border: 1px solid $news;
+				@include fonts($roboto, 16px, 400, 21px, $dark_gray);
+				cursor: pointer;
+			}
+			.minus{
+				border-radius: 5px 0 0 5px;
+			}
+			.plus{
+				border-radius: 0 5px 5px 0;
+			}
+		}
+	.remove{
+		background-color: transparent;
+		cursor: pointer;
+		text-decoration: none;
+		color: rgba(255, 132, 121, 1);
+		font-size: 20px;
+		line-height: 20px;
+		font-weight: 400;
+		border: 2px solid rgba(255, 132, 121, 1);
+		border-radius: 50%;
+		padding: 0px 5px;
+	}
+	.back{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	@include fonts($roboto, 16px, 700, 16px, $paginat);
+	padding-bottom: 3px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	border-bottom: 1px solid $paginat;
+}

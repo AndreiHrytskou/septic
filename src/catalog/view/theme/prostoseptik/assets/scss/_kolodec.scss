@@ -1,0 +1,105 @@
+.textblock-wrap:nth-child(even){
+	.textblock-wrap-container{
+		flex-direction: row-reverse;
+	}
+}
+.textblock-wrap-image{
+	img{
+		max-width: 535px;
+		width: 100%;
+	}
+	
+}
+.textblock__pic{
+	display: none;
+}
+.textblock-wrap{
+	.content__text{
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	.advantage{
+		max-width: 670px;
+		margin: 0 auto;
+	}
+}
+.table{
+	max-width: 100%;
+	width: 100%;
+	margin-top: 20px;
+	overflow: hidden;
+	border-radius: 10px;
+	border-collapse: collapse;
+	thead{
+		background-color: $light_blue;
+		th:first-child{
+			border-right: 1px solid rgba(45, 45, 45, 0.2);
+		}
+		th{
+			padding: 10px 20px;
+			width: 50%;
+			@include fonts($roboto, 14px, 600, 21px, $white);
+		}
+	}
+	tbody{
+		tr td{
+			padding: 10px 20px;
+		}
+		tr td:first-child{
+			border-right: 1px solid rgba(45, 45, 45, 0.2);
+		}
+		tr:nth-child(odd){
+			background-color: $white;
+		}
+		.table-service{
+			@include fonts($roboto, 14px, 400, 21px, $dark_gray);
+		}
+		.table-price{
+			@include fonts($roboto, 14px, 500, 21px, $dark_gray);
+			text-align: center;
+		}
+	}
+}
+.benefits{
+		transform: translateX(-1000%);
+	transition: 0.5s;
+	margin-top: 80px;
+	&-title{
+		@include fonts($comfortaa, 45px, 700, 50px, $dark_gray);
+		text-align: center;
+	}
+	&-block{
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+		&-item{
+				transform: scale(0); 
+			transition: 2s;
+			background-color: $dark_blue;
+			border-radius: 5px;
+			padding: 30px 40px;
+			width: 100%;
+			max-width: 25%;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 15px;
+			&-image{
+				max-width: 52px;
+				width: 100%;
+				height: 52px;
+				padding: 10px;
+				border-radius: 5px;
+				background-color: $white;
+			}
+			&-text{
+				max-width: 150px;
+				p{
+					@include fonts($roboto, 20px, 700, 26px, $white);
+					text-align: center;
+				}
+			}
+		}
+	}
+}

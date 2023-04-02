@@ -1,0 +1,253 @@
+.v-headbaner{
+	margin-top: 20px;
+	display: flex;
+	padding: 80px 0;
+	&-block{
+		max-width: 640px;
+		width: 100%;
+		background-color: rgba(45, 45, 45, 0.9);
+		padding: 50px;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		&-text{
+			@include fonts($roboto, 16px, 400, 24px, $white);
+		}
+	}
+}
+
+.textblock-wrap{
+	margin-top: 30px;
+	padding: 40px 50px;
+	border-radius: 10px;
+	&-container{
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		position: relative;
+		&-list{
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			height: auto;
+			margin-top: 10px;
+			&-item{
+				max-width: 505px;
+				width: 100%;
+				background-color: $light_blue;
+				overflow: hidden;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 0 0 30px;
+				border-radius: 10px;
+				&-text{
+					display: flex;
+					flex-direction: column;
+					gap: 5px;
+					max-width: 230px;
+					&-name{
+						@include fonts($roboto, 20px, 700, 26px, $white);
+					}
+					&-price{
+						@include fonts($roboto, 18px, 400, 23px, $white);
+					}
+				}
+			}
+			&-img{
+				max-width: 211px;
+				img{
+					width: 211px;
+					height: 123px;
+					display: block;
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+		}
+	}
+	&-block{
+		margin-top: 20px;
+		border-radius: 10px;
+		padding: 20px;
+		background-color: $white;
+		&-title{
+			@include fonts($roboto, 20px, 700, 26px, $dark_gray);
+			margin-bottom: 10px;
+		}
+	}
+	&-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+}
+.consultant__btn{
+	cursor: pointer;
+	background-color: $paginat;
+	border-radius: 5px;
+	border: none;
+	padding: 20px 40px;
+	@include fonts($roboto, 16px, 700, 16px, $white);
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.consultant__btn:hover{
+	padding: 18.4px 40px;
+	box-sizing: border-box;
+	border: 2px solid $paginat;
+	background-color: $white;
+	color: $paginat;
+}
+
+.form-button{
+	cursor: pointer;
+	background-color: $paginat;
+	border-radius: 5px;
+	padding: 20px 40px;
+	border: none;
+	@include fonts($roboto, 16px, 700, 16px, $white);
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+.form-button:hover{
+	padding: 18px 40px;
+	background-color: $white;
+	color: $paginat;
+	border: 2px solid $paginat;
+}
+.textblock-wrap-container:nth-child(3){
+	flex-direction: row-reverse;
+	margin-top: 30px;
+	.textblock-wrap-container-list{
+		margin-top: 10px;
+	}
+	.textblock-wrap-container-list-item{
+		flex-direction: row-reverse;
+		padding-left: 0;
+		padding-right: 30px;
+	}
+}
+.textblock-wrap-container:nth-child(4){
+	margin-top: 30px;
+	.textblock-wrap-container-list{
+		margin-top: 10px;
+	}
+}
+.textblock-wrap-container-block{
+	max-width: 591px;
+	width: 100%;
+}
+.map{
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+.skvazhina{
+	margin-top: 50px;
+	.title{
+		margin-bottom: 30px;
+	}
+}
+.textwhy{
+	.title{
+		margin-top: 50px;
+		margin-bottom: 20px;
+	}
+}
+.city-list{
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	align-items: center;
+	gap: 10px;
+}
+.city-item{
+	border-radius: 6px;
+	background-color: $white;
+	padding: 10px;
+	margin: 0;
+}
+.ingener{
+	margin: 50px auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 460px;
+	width: 100%;
+	background-color: $light_blue;
+	border-radius: 10px;
+	padding: 30px;
+	#ingener_name,
+	#name,
+	#tel{
+		padding: 14px 20px;
+		border: none;
+		outline: none;
+		border-radius: 5px;
+	}
+	#ingener_name::placeholder,
+	#name::placeholder,
+	#tel::placeholder{
+		@include fonts($roboto, 16px, 400, 21px, $inputplaceholder);
+	}
+	.textblock-wrap-btn-but{
+		border: none;
+	}
+}
+#map{
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+	height: 500px;
+}
+.fixed{
+	position: fixed;
+	top: 80px;
+}
+.fixed2{
+	max-width: 471px;
+	position: fixed;
+	top: 100px;
+}
+.fix{
+	position: absolute;
+	justify-content: flex-end;
+	align-items: flex-end;
+	right: 0;
+	left: auto !important;
+	bottom: 0;
+}
+.fix2{
+	max-width: 471px;
+	position: absolute;
+	justify-content: flex-end;
+	align-items: flex-end;
+	right: 0;
+	left: auto !important;
+	bottom: 0;
+}
+.name-active{
+	border: 2px solid red !important;
+}
+.name-active::placeholder{
+	color: red !important;
+}
+.name-active:focus{
+	border: none !important;
+	outline: none;
+}
+.name-active::placeholder:focus{
+	color: $inputplaceholder !important;
+}
+
+.mfilter-before-box{
+	display: none;
+}
+
+.sidebar{
+	margin-top: 0;
+}

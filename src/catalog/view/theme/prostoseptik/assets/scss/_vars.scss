@@ -1,0 +1,79 @@
+$white: rgba(255, 255, 255, 1);
+$black: rgba(0, 0, 0, 1);
+$light_blue: rgba(0, 209, 195, 1);
+$dark_blue: rgba(0, 153, 153, 1);
+$dark_gray: rgba(45, 45, 45, 1);
+$hide: rgba(249, 249, 249, 1);
+$paginat: rgba(42, 68, 127, 1);
+$block: rgba(249, 249, 249, 1);
+$news: rgba(244, 244, 244, 1);
+$footer: rgba(235, 235, 235, 1);
+$inputplaceholder: rgba(198, 198, 198, 1);
+$input: rgba(26, 115, 232, 1);
+$btnchecked: rgba(82, 104, 154, 1);
+$grey: rgba(191, 196, 203, 1);
+$yellow: rgba(249, 240, 43, 1);
+$price:rgba(240, 247, 255, 1);
+
+
+// fonts
+$roboto:'Roboto', sans-serif;
+$comfortaa:'Comfortaa', sans-serif;
+$archivo: 'Archivo', sans-serif;
+
+// mixin
+
+@mixin fonts($font,$size,$weight,$height, $color){
+	font-family: $font;
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $height;
+	color: $color;
+}
+.page-title{
+	@include fonts($comfortaa, 50px, 700, 55px, $dark_gray);
+}
+.subtitle{
+	@include fonts($comfortaa, 45px, 700, 50px, $dark_gray);
+}
+.center{
+	text-align: center;
+}
+.title{
+		@include fonts($comfortaa, 30px, 700, 33px, $dark_gray);
+}
+.title__white{
+	color: $white;
+}
+.title__indent-top{
+	margin-top: 20px;
+}
+.title__indent{
+	margin-bottom: 20px;
+}
+.blue{
+	color: $light_blue;
+}
+.wrapper__background{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.form__text{
+	margin-top: 10px;
+		@include fonts($roboto, 25px, 400, 38px, $white);
+		margin-bottom: 20px;
+}
+.text{
+	@include fonts($roboto, 14px, 400, 18px, $dark_gray);
+}
+.btn{
+	background-color: $paginat;
+	border-radius: 5px;
+	padding: 20px 40px;
+	@include fonts($roboto, 16px, 700, 16px, $white);
+	text-align: center;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
